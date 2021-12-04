@@ -5,7 +5,7 @@ a small web application that models an address book
 - Simple user-interface 
 - Persist Data using the session Storage
 - Inbuilt sample data from the jsonplaceholder API
-- The people and organistion are interlinked, so one can add organisation members from contact list as well as new ones and so forth. 
+- The people and organistion are interlinked, so one can  easily add organisation members from contact list as well as new ones and so forth. 
 ## Requirments 
  - Nodejs (version 8 and later)
  - NPM 
