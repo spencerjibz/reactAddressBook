@@ -1,14 +1,19 @@
 ### React Adress Book App
+
 a small web application that models an address book
 
-## Features 
-- Simple user-interface 
+## Features
+
+- Simple user-interface
 - Persist Data using the session Storage
 - Inbuilt sample data from the jsonplaceholder API
-- The people and organistion are interlinked, so one can  easily add organisation members from contact list as well as new ones and so forth. 
-## Requirments 
- - Nodejs (version 8 and later)
- - NPM 
+- The people and organistion are interlinked, so one can easily add organisation members from contact list as well as new ones and so forth.
+
+## Requirments
+
+- Nodejs (version 8 and later)
+- NPM
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,13 +1,12 @@
-
- import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import {People,Organisation} from './tabComponents';
-import { Link, Route, BrowserRouter, Switch,Redirect} from "react-router-dom";
-import './App.css'
-import Storage from './storage';
+import React, { Component } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import { People, Organisation } from "./tabComponents";
+import { Link, Route, BrowserRouter, Switch, Redirect } from "react-router-dom";
+import "./App.css";
+import Storage from "./storage";
 
 //
 
@@ -34,88 +33,58 @@ function CenteredTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="People"  component ={Link} to="/people"/>
-        <Tab label="Organisations" component={Link}  to="/orgs"/>
-        
+        <Tab label="People" component={Link} to="/people" />
+        <Tab label="Organisations" component={Link} to="/orgs" />
       </Tabs>
     </Paper>
   );
 }
-  // make data persistent even with a reload
+// make data persistent even with a reload
 if (window.performance) {
   if (performance.navigation.type === 1) {
-     Storage.init()
+    Storage.init();
   } else {
-    
   }
 }
-  
 
- class App extends Component {
-   
-  
-  componentDidMount () {
-    
-   
-    
- // take use Storage
- 
-  if(localStorage["addressBook"]) { 
-// watch  for
-Storage.init()
- 
+class App extends Component {
+  componentDidMount() {
+    // take use Storage
+
+    if (localStorage["addressBook"]) {
+      // watch  for
+      Storage.init();
+    }
   }
-   
-   
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="container">
+          <div className="">
+            <div className="title text-center">
+              <hr className="uk-divider-icon"></hr>
+              <h1 className="my-4">Address Book</h1>
+              <hr className="uk-divider-icon"></hr>
+            </div>
 
- 
- 
-  }
-     render() {
-         return (
-             <BrowserRouter>
-             
-              <div className="container">
-           <div  className=''>
-           
-           <div className="title text-center">
-           <hr className="uk-divider-icon"></hr>
-			<h1 className='my-4'>Address Book</h1>
-            <hr className="uk-divider-icon"></hr>
-		</div>
-       
-      <CenteredTabs/>
+            <CenteredTabs />
 
-<div>
+            <div></div>
 
-  
-</div>
+            <div></div>
+          </div>
 
-<div>
- 
-</div>
-           </div>
-
-           <Switch>
+          <Switch>
             <Route path="/people" component={People} />
             <Route path="/orgs" component={Organisation} />
             <Route exact path="/">
-    <Redirect to="/people" />
-</Route>
-           
-           
+              <Redirect to="/people" />
+            </Route>
           </Switch>
- 
-</div>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
 
-  
-             </BrowserRouter>
-           
-         );
-     }
- }
- 
- export default App;
- 
-
- 
+export default App;
